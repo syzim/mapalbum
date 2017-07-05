@@ -35,6 +35,8 @@ function initialize(){
   // states.push({name:"Wyoming",id:"WY",lat:42.755966,long:-107.302490,zoom:6});
   //  state = states.find(x=>x.id ==="");
 
+
+// setup array to store highlight points a user can scroll through.
   states.push({name:"West Coast",id:"WC",lat:38.960348,long: -123.678060,zoom:11});
   states.push({name:"Painted Hills",id:"PH",lat:44.661526,long:  -120.273142,zoom:11});
   states.push({name:"Crater Lake",id:"CL",lat:42.927875,long: -122.092319,zoom:11});
@@ -106,6 +108,8 @@ visibleArray=[];
 
   metaData.success = function(data){
 
+//obtain width and get count which records the number of photos can display on screen and fetchs
+// smaller image if mobile/tablet.
 
   var w = $(window).width();
     data.forEach(function(mark){
@@ -121,7 +125,6 @@ photoArray.push({id:mark.id,url:mark.urls,large:mark.urll});
 
 
 var co =  new google.maps.LatLng(mark.lat,mark.lng)
-  //  var dot =  new google.maps.Marker({position:co,map:map,icon:mark.urlx});
 if(!markers.find(x=>x.id == mark.id))
 
   {
@@ -160,7 +163,9 @@ $.ajax(metaData)
 
 
 
-// function createWheel(photoArray){
+// uses photo metadata obtained to setup a div at the bottom of the screen
+// containing thumbnail wheen for user to scroll through
+
   function createWheel(){
 
 index = 0;
@@ -229,24 +234,6 @@ var right = document.createElement('div');
    $('.arrow-left').first().css("display","none");
 
 }
-
-
-// $(".wheelImage").mouseout(function(){
-//
-//   var marker = markers.find(x=>x.id == this.id)
-//   marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png')
-//   marker.setZIndex(0);
-//
-// });
-
-// $(".wheelImage").mouseover(function(){
-//
-// var marker = markers.find(x=>x.id == this.id)
-// marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
-//
-// marker.setZIndex(5000);
-// console.log(marker.getZIndex());
-// })
 
 
 };
@@ -341,7 +328,8 @@ img.onclick = function(){
 
 
 }
-function photoLeft(){
+
+//toDo. - refactor photoleft/right/create wheel
   var cnt = $('.bottomWheel');
   cnt.empty();
   var right = document.createElement('div');
@@ -431,6 +419,7 @@ if(photoArray[index - count]){
 
 
 }
+//map moves through highlights on mobile view.
 function nextState(param){
 
 
