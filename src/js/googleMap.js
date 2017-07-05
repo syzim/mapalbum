@@ -174,9 +174,11 @@ var right = document.createElement('div');
         left.setAttribute("onclick","photoLeft()");
 
   // for(let i = 0;i<visibleArray.length;i++){
+  if(photoArray.length < 2){
+    count = photoArray.length
+  }
   if(photoArray.length > 0){
    for(let i = 0;i<count;i++){
-
 
     var myDiv = document.createElement('div');
     //li.appendChild(document.createTextNode(visableArray[i]));
