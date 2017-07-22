@@ -149,8 +149,9 @@ count =  Math.floor((w-30)/150)
 count =  Math.floor((w-60)/267)
 
 }
-
+console.log(photoArray.length)
   createWheel();
+
 
 };
 
@@ -304,18 +305,6 @@ img.onclick = function(){
 }
 
 
-
-
-
-
-
-
-
-
-
-
-   }else{
-    //  item.remove();
    }
 }
 
@@ -330,6 +319,7 @@ img.onclick = function(){
 }
 
 //toDo. - refactor photoleft/right/create wheel
+function photoLeft(){
   var cnt = $('.bottomWheel');
   cnt.empty();
   var right = document.createElement('div');
@@ -395,8 +385,6 @@ img.onclick = function(){
 
 
 
-   }else{
-    //  item.remove();
    }
 }
 
