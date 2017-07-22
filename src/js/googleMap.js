@@ -60,7 +60,7 @@ function initialize(){
 btn = document.getElementById("cycleFoward");
 btn.setAttribute("onclick",`nextState("${current}")`);
 // btn.setAttribute("style","z-index:50;");
-
+$("#stateName").text(state.name)
   states.forEach(function(state){
      li = document.createElement("li");
 
@@ -149,7 +149,6 @@ count =  Math.floor((w-30)/150)
 count =  Math.floor((w-60)/267)
 
 }
-console.log(photoArray.length)
   createWheel();
 
 
@@ -203,8 +202,7 @@ var right = document.createElement('div');
       myDiv.setAttribute('class','flexItem')
       myDiv.setAttribute('alt',i)
 
-      myDiv.append(img);
-
+       myDiv.appendChild(img);
     cnt.prepend(myDiv);
 
     img.onclick = function(){
@@ -284,7 +282,7 @@ img.setAttribute('src',photoArray[i].url)
   div.setAttribute('class','flexItem')
   div.setAttribute('alt',i)
 
-  div.append(img);
+  div.appendChild(img);
 
 cnt.prepend(div);
 
@@ -354,7 +352,7 @@ img.setAttribute('src',photoArray[i].url)
   div.setAttribute('class','flexItem')
   div.setAttribute('alt',i)
 
-  div.append(img);
+  div.appendChild(img);
 
 cnt.prepend(div);
 
