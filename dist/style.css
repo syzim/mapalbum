@@ -19,7 +19,9 @@
 }
 
 html,body{
+  display:-webkit-flex;
   display:flex;
+  -webkit-flex-direction:column;
   flex-direction:column;
   height: 100vh;
   margin:0;
@@ -43,10 +45,11 @@ html,body{
   /*width:100%;
   height:100%;*/
   flex:1;
+  -webkit-flex:1;
 background-color: #000000;
 
 }
-}
+
 .wheelImage{
 width:100%;
 height:auto;
@@ -54,9 +57,13 @@ height:auto;
 
 }
 .bottomWheel{
+display: webkit-flex;
 display: flex;
+-webkit-justify-content: space-around;
+-webkit-align-items: center;
 justify-content: space-around;
 align-items: center;
+
 background-color: #000000;
 height:200px;
 
@@ -69,7 +76,7 @@ h1{
   color:#D75813;
   font-family:Arial;
   text-align: center;
-  font-size:2.5ems;
+  font-size:2.5em;
 }
 
 #svgMap{
@@ -89,7 +96,7 @@ path{
 
  text{
   opacity:0;
-  fill=#D75813
+  fill:#D75813;
 }
 
 path:hover + text{
@@ -109,6 +116,10 @@ pointer-events:all;
 
 nav ul{
 
+  display:-webkit-flex;
+  -webkit-flex-direction:row;
+  -webkit-flex-wrap:wrap;
+  -webkit-justify-content:space-between;
   display:flex;
   flex-direction:row;
   flex-wrap:wrap;
@@ -140,6 +151,7 @@ nav li{
 
 
   z-index: 0;
+    -webkit-flex:none;
   flex:none;
 
 
@@ -152,7 +164,8 @@ nav li{
 
   border-right: 40px solid #D75813;
   z-index: 0;
-  flex:none;
+  -webkit-flex:none;
+flex:none;
 
 
 }
@@ -262,6 +275,11 @@ line-height: 50px;
   display:none;
 }
  ul.mobileNav{
+   display:webkit-flex;
+   list-style: none;
+   -webkit-flex-direction:row;
+   -webkit-flex-wrap:wrap;
+   -webkit-flex-flow:row wrap;
   display:flex;
   list-style: none;
   flex-direction:row;

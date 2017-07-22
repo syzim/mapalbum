@@ -70,7 +70,7 @@ function initialize() {
   btn = document.getElementById("cycleFoward");
   btn.setAttribute("onclick", "nextState(\"" + current + "\")");
   // btn.setAttribute("style","z-index:50;");
-
+  $("#stateName").text(state.name);
   states.forEach(function (state) {
     li = document.createElement("li");
 
@@ -140,7 +140,6 @@ function fetchImages() {
     } else {
       count = Math.floor((w - 60) / 267);
     }
-    console.log(photoArray.length);
     createWheel();
   };
 
@@ -188,8 +187,7 @@ function createWheel() {
       myDiv.setAttribute('class', 'flexItem');
       myDiv.setAttribute('alt', i);
 
-      myDiv.append(img);
-
+      myDiv.appendChild(img);
       cnt.prepend(myDiv);
 
       img.onclick = function () {
@@ -263,7 +261,7 @@ function photoRight() {
       div.setAttribute('class', 'flexItem');
       div.setAttribute('alt', i);
 
-      div.append(img);
+      div.appendChild(img);
 
       cnt.prepend(div);
 
@@ -327,7 +325,7 @@ function photoLeft() {
       div.setAttribute('class', 'flexItem');
       div.setAttribute('alt', i);
 
-      div.append(img);
+      div.appendChild(img);
 
       cnt.prepend(div);
 
